@@ -1,0 +1,13 @@
+---
+- name: Ensure /var/www/images directory exists
+  ansible.builtin.file:
+    path: /var/www/images
+    state: directory
+    mode: '0755'
+
+- name: Upload static content
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /var/www/images/
+  loop: "{{ lookup('fileglob', '/Users/romangercikov/test_task_29.09.24/ansible/static/*', wantlist=True) }}"
+  tags: static_content

@@ -1,0 +1,14 @@
+---
+users:
+  - name: "user1"
+    shell: "/bin/bash"
+    password: "$6$qvEqc0Njk2RAwvu7$3pe.cMr2FTMUXRnu026DlF2TvUyCw2N.Zj.tTI6pYGKjWzbepApKA.OH3M4oxw/1iQtaxaiEZiuUmvKv4C6WQ/"
+    state: "present"
+    groups:
+      - "sudo"
+      - "developers"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDTznn0w7nyCa1dd2vGrZ2uCL5IRRzuT2VFNwE+8lhtD9lKCH17MYBCr/m3kBBffevEAA3ex4/9bY6p4FwrCG3Zmxxo9Vj54HS1yS6aViRpkuEaKuvVrXVxjXY2Wir0M8J2FOI15jRYSOXbglOE4duQv+wVgpRfuy9zgE9DtPkN3vCzsjo7BhQVxfUkb9KFL+hulrMaoLFQj0yomTIYZRmVrG2aONLv2RmldQsRVtuDY6rxqe+RRvJhRdVbkx0m+ynw1vq5soCTmZsCR2OJb473MYP1Uk8/wYGQIymvNrjFM0zVXZQx5ndrkYZ/3fgheIYBLHyNmLy5BPLtSBghgrLxSx1grGzgvL1AV43NZ/LKC1lEV7IYPf5OKgejTRygYL9MPRT+TvPzpRPhTWhI9VNmLp5API9E/STOKbvTWzV+SmtGixNBGgGlEXBggcC8mjVufcnusRbuAgzF0dogc2kHgfMttXXkOHUUzAnB/jcppAIf9x8IIQ0rYXn0Nc3qCzgVPO2lvmJGKw81U82dHgHObafNblYcYRZn5ynzZGQgYN7M0och2WQ6qTWAeXZV66QJQ0ktNtWhrmV8Rzg+h6fj/Ue8F3+KG47S/CQpbwu3XlBw8vVzu9nj+3DqA/x0Jqjk0ItgEQ9iz9xH5qPn3jhS+eWeVIMYQB1orQy4gJ5uMw== user1"
+
+custom_groups:
+  - "developers"
+  - "managers"

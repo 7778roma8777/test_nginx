@@ -1,0 +1,26 @@
+---
+- name: "Ensure custom groups are present"
+  ansible.builtin.group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ custom_groups }}"
+  tags: groups
+
+- name: "Manage users"
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    password: "{{ item.password | default(omit) }}"
+    state: "{{ item.state }}"
+    groups: "{{ item.groups | join(',') }}"
+  loop: "{{ users }}"
+  tags: users
+
+- name: "Add SSH public key for users"
+  ansible.builtin.authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: "{{ item.ssh_key }}"
+  loop: "{{ users }}"
+  when: item.ssh_key is defined and item.state == 'present'
+  tags: ssh

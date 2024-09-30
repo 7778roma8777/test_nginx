@@ -1,0 +1,18 @@
+server {
+    listen 80;
+
+    location /images {
+        root /var/www;
+        autoindex on;
+        expires 1h;
+        gzip_static on; 
+    }
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    gzip on;
+    gzip_min_length 1000;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;
+    gzip_vary on; 
+}
